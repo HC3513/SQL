@@ -1,0 +1,28 @@
+CREATE TABLE clothing (id INTEGER PRIMARY KEY, Name TEXT, quantity INTEGER, price INTEGER, color TEXT, aisle INTEGER); 
+INSERT INTO clothing VALUES (1, "T-Shirts", 6, 46.99,"blue", 1); 
+INSERT INTO clothing VALUES (2, "Tank tops", 6, 18.99,"red", 1);
+INSERT INTO clothing VALUES (3, "Shorts", 6, 28.99,"denim", 3); 
+INSERT INTO clothing VALUES (4, "Jeans", 6, 44.99, "black", 3); 
+INSERT INTO clothing VALUES (5, "Dresses", 6, 84.99, "pink", 3);
+INSERT INTO clothing VALUES (6, "Dress pants", 6, 34.99, "tan", 7);
+INSERT INTO clothing VALUES (7, "Swim Suit", 6, 17.99, "red/white stripes", 7); 
+INSERT INTO clothing VALUES (8, "Sweatshirt", 6, 54.99, "white", 7); 
+INSERT INTO clothing VALUES (9, "Blazer", 6, 104.99, "orange", 2); 
+INSERT INTO clothing VALUES (10, "Cardigan", 6, 14.99, "coral", 2); 
+INSERT INTO clothing VALUES (11, "Sneakers", 6, 64.99, "white/black", 7); 
+INSERT INTO clothing VALUES (12, "Slippers", 6, 17.99, "yellow", 3); 
+INSERT INTO clothing VALUES (13, "Bathrobe", 6, 14.99, "white", 5 ); 
+INSERT INTO clothing VALUES (14, "face mask", 6, 4.99, "multicolored", 2); 
+INSERT INTO clothing VALUES (15, "Athletic wear", 6, 24.99, "purple", 3); 
+
+--display the database ordered by price 
+SELECT * FROM clothing ORDER BY price; 
+
+--What is the average of the price in the clothing section? 
+SELECT SUM(price) FROM clothing; 
+
+--What clothes are in each aisle? 
+SELECT * FROM clothing ORDER BY aisle;
+
+--How much of each type of clothing is in each aisle? 
+SELECT aisle, SUM(quantity) FROM clothing GROUP BY AISLE;
